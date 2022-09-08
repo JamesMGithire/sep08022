@@ -19,7 +19,7 @@ function App() {
       return { ...prevObj, [name]: value }
     });
   }
-  // console.log(formData.favColor)
+  console.log(formData.favColor)
 
   function handleChecked(event) {
     const { name, value, type, checked } = event.target;
