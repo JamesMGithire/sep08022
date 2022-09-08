@@ -3,12 +3,22 @@ import React from 'react';
 
 function App() {
   const [formData, setFormData] = React.useState(
-    { firstName: "", lastName: "", comments: "" }
+    {
+      firstName: "",
+      lastName: "",
+      comments: "",
+      isFriendly: true
+    }
   );
   console.log(formData);
   function handleChange(event) {
     setFormData(prevObj => {
       return { ...prevObj, [event.target.name]: event.target.value }
+    });
+  }
+  function handleChecked(event) {
+    setFormData(prevObj => {
+      return { ...prevObj, [event.target.name]: event.target.checked}
     });
   }
   return (
@@ -32,11 +42,13 @@ function App() {
         onChange={handleChange}
         name="comments"
       />
-      <input 
-      type="checkbox"
-      id='isFriendly'
-      />
       <label htmlFor='isFreindly'>Are you friendly?</label>
+      <input
+        type="checkbox"
+        id='isFriendly'
+        name='isFriendly'
+        checked={formData.isFriendly}
+      />
     </form>
   );
 }
