@@ -8,7 +8,8 @@ function App() {
       lastName: "",
       comments: "",
       isFriendly: true,
-      employment: ""
+      employment: "",
+      favColor: ""
     }
   );
 
@@ -18,7 +19,7 @@ function App() {
       return { ...prevObj, [name]: value }
     });
   }
-  console.log(formData)
+  // console.log(formData.favColor)
 
   function handleChecked(event) {
     const { name, value, type, checked } = event.target;
@@ -54,8 +55,8 @@ function App() {
         name='isFriendly'
         checked={formData.isFriendly}
         onChange={handleChecked}
-        />
-        
+      />
+
       <fieldset>
         <legend>Current employment status</legend>
         <input
@@ -80,6 +81,20 @@ function App() {
           onChange={handleChecked}
         /><label>Full-time</label>
       </fieldset>
+
+      <select
+        id='favColor'
+        value={formData.favColor}
+        onChange={handleChange}
+        name="favColor"
+      >
+        <option>-- Choose --</option>
+        <option value="red">Red</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="blue">Blue</option>
+      </select>
     </form>
   );
 }

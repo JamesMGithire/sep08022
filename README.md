@@ -1,6 +1,7 @@
 <body>
 In React State
 >>> Dealing with:
-radio button and checkbox state
-
+>radio button
+>checkbox state
+>Select ./ options
 </body>
