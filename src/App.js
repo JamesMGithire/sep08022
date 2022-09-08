@@ -18,8 +18,8 @@ function App() {
       return { ...prevObj, [name]: value }
     });
   }
+  console.log(formData)
 
-  console.log(formData.employment)
   function handleChecked(event) {
     const { name, value, type, checked } = event.target;
     setFormData(prevObj => {
